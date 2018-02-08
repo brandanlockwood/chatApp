@@ -1,0 +1,4 @@
+<div>
+  <input placeholder="type in a username" [(ngModel)]="username" (keyup)="$event.keyCode == 13 && setName()" />
+  <input type="submit" class="btn" [value]="btnText" (click)="setName()">
+</div>

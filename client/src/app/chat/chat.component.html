@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div *ngFor="let message of messages">
+    {{message}}
+</div>
+<div>
+  <h1>Logged in as {{username}}</h1>
+<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button (click)="sendMessage()">Send</button>
+</div>
