@@ -3,6 +3,7 @@ export class User{
   constructor()
   {
     this.username='';
+
   }
   public getUserName()
   {

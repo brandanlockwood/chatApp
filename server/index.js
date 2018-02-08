@@ -16,8 +16,18 @@ io.on('connection', (socket) => {
      console.log(message);
       io.emit('new-message',message);
     });
+    // once a client has connected, we expect to get a ping from them saying what room they want to join
+    socket.on('room', function(room) {
+        console.log(room);
+        console.log(socket.adapter.rooms);
+        socket.join(room);
+        io.emit('roomList',socket.adapter.rooms)
+    });
+
 });
 
 server.listen(port, () => {
     console.log(`started on port: ${port}`);
 });
+
+
